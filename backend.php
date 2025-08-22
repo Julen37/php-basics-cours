@@ -21,8 +21,11 @@ $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_FLOAT );
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
-$_SESSION['cart'] [] = [
-    $name => $price    
-];   
+// $_SESSION['cart'] [] = [
+//     $name => $price    
+// ];   
+// session_destroy();
+$_SESSION['cart'] [$name] = $price;
+
     
 var_dump($_SESSION['cart']);
